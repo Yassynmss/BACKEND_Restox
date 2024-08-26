@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Examen.ApplicationCore.Domain.BizAccount>
+
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1>index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pseudo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatCrea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatUpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVerified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLocked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresses)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pseudo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatCrea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatUpt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVerified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsLocked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresses)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BizAccountID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BizAccountID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BizAccountID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
