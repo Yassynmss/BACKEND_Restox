@@ -17,6 +17,7 @@ namespace Examen.WEB.Controllers
             _serviceMenuPage = serviceMenuPage;
         }
 
+
         [HttpGet]
         public IActionResult Get()
         {

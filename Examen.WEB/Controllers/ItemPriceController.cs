@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Examen.WEB.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ItemPriceController : ControllerBase
@@ -60,7 +60,7 @@ namespace Examen.WEB.Controllers
             existingItemPrice.Price = itemPrice.Price;
             existingItemPrice.Discount = itemPrice.Discount;
             existingItemPrice.DisplayPrice = itemPrice.DisplayPrice;
-            existingItemPrice.CurrencyID = itemPrice.CurrencyID;
+            //existingItemPrice.CurrencyID = itemPrice.CurrencyID;
 
             try
             {

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Examen.WEB.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class LanguageController : ControllerBase

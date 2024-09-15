@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.HtmlDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BizAccount)
+                @Html.DisplayNameFor(model => model.ApplicationUser)
             </th>
             <th></th>
         </tr>
@@ -35,7 +35,7 @@
                     @Html.DisplayFor(modelItem => item.HtmlDescription)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BizAccountID)
+                    @Html.DisplayFor(modelItem => item.ApplicationUserID)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.MenuID">Edit</a> |

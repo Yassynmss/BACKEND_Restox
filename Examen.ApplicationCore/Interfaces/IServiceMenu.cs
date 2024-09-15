@@ -10,6 +10,6 @@ namespace Examen.ApplicationCore.Interfaces
 {
     public interface IServiceMenu : IService<Menu>
     {
-        BizAccount GetBizAccountById(int bizAccountId);
+        BizAccount GetBizAccountById(string bizAccountId);
     }
 }

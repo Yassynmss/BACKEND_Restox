@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -16,12 +15,14 @@ namespace Examen.WEB.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager; // Ajouté
         private readonly IConfiguration _configuration;
 
-        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration)
+        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager; // Initialisé
             _configuration = configuration;
         }
 
@@ -69,13 +70,44 @@ namespace Examen.WEB.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            var user = new ApplicationUser { UserName = model.Pseudo, Email = model.Email };
+            var user = new ApplicationUser
+            {
+                UserName = model.Pseudo,
+                Email = model.Email,
+                FullName = model.FullName,
+                PhoneNumber = model.Phone,
+                Organization = model.Organization,
+                DatCrea = DateTime.UtcNow,
+                DatUpt = DateTime.UtcNow,
+                IsVerified = model.IsVerified,
+                IsLocked = model.IsLocked
+            };
+
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                // Supprimer la ligne ci-dessous pour éviter l'authentification automatique
-                // await _signInManager.SignInAsync(user, false);
+                if (Enum.TryParse<RoleType>(model.Role, true, out var roleType) && Enum.IsDefined(typeof(RoleType), roleType))
+                {
+                    var roleName = roleType.ToString(); // Convertir l'enum en nom de rôle
+
+                    // Crée le rôle si nécessaire
+                    if (!await _roleManager.RoleExistsAsync(roleName))
+                    {
+                        var roleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
+                        if (!roleResult.Succeeded)
+                        {
+                            return BadRequest("Failed to create role.");
+                        }
+                    }
+
+                    // Ajoute le rôle spécifié à l'utilisateur
+                    await _userManager.AddToRoleAsync(user, roleName);
+                }
+                else
+                {
+                    return BadRequest("Invalid role specified.");
+                }
 
                 return Ok();
             }
@@ -83,36 +115,52 @@ namespace Examen.WEB.Controllers
             return BadRequest(result.Errors);
         }
 
-
         public class LoginModel
-    {
-        public string Pseudo { get; set; }
-        public string Password { get; set; }
-    }
+        {
+            public string Pseudo { get; set; }
+            public string Password { get; set; }
+        }
 
-    public class RegisterModel
-    {
-        [Key]
-        public int BizAccountID { get; set; }
+        public class RegisterModel
+        {
+            public string Pseudo { get; set; }
+            public string Organization { get; set; }
+            public string Password { get; set; }
+            public string FullName { get; set; }
+            public string Phone { get; set; }
+            public string Email { get; set; }
+            public DateTime DatCrea { get; set; }
+            public DateTime DatUpt { get; set; }
+            public bool IsVerified { get; set; }
+            public bool IsLocked { get; set; }
 
-        public string Pseudo { get; set; }
-        public string Organization { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public DateTime DatCrea { get; set; }
-        public DateTime DatUpt { get; set; }
-        public bool IsVerified { get; set; }
-        public bool IsLocked { get; set; }
-        [JsonIgnore]
-        // Relation avec Adress avec suppression en cascade
-        public virtual ICollection<Adress>? Adresses { get; set; } = new List<Adress>();
+            // Nouveau champ pour le rôle
+            public string Role { get; set; }
+        }
 
-        // Propriété de navigation pour la relation avec Menu
-        [JsonIgnore]
-        public virtual ICollection<Menu> Menus { get; set; } = new List<Menu>();
+        [HttpGet("customers")]
+        public async Task<IActionResult> GetCustomers()
+        {
+            var roleName = RoleType.CUSTOMER.ToString(); // Nom du rôle à chercher
 
-        [JsonIgnore]
-        public virtual ICollection<Order>? Orders { get; set; }
+            var usersInCustomerRole = await _userManager.GetUsersInRoleAsync(roleName);
+
+            if (usersInCustomerRole == null || !usersInCustomerRole.Any())
+            {
+                return NotFound("No customers found.");
+            }
+
+            var customerList = usersInCustomerRole.Select(user => new
+            {
+                user.Id,
+                user.UserName,
+                user.FullName,
+                user.Email,
+                user.PhoneNumber,
+                user.Organization
+            }).ToList();
+
+            return Ok(customerList);
+        }
     }
 }
-

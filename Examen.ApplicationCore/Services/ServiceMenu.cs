@@ -11,7 +11,7 @@ namespace Examen.ApplicationCore.Services
         {
         }
 
-        public BizAccount GetBizAccountById(int bizAccountId)
+        public BizAccount GetBizAccountById(string bizAccountId)
         {
             // Utilisez _unitOfWork pour accéder au repository
             return _unitOfWork.Repository<BizAccount>().GetById(bizAccountId);

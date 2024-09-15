@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Examen.WEB.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class OrderController : ControllerBase
@@ -57,15 +57,14 @@ namespace Examen.WEB.Controllers
             }
 
             // Update only relevant properties
-            existingOrder.CustomerID = order.CustomerID;
-            existingOrder.BizAccountID = order.BizAccountID;
+            existingOrder.ApplicationUserId = order.ApplicationUserId;
             existingOrder.OrderDate = order.OrderDate;
-            existingOrder.PaymentMethodID = order.PaymentMethodID;
+            existingOrder.PaymentMethod = order.PaymentMethod;
             existingOrder.PaymentStatus = order.PaymentStatus;
             existingOrder.DeliveryStatusID = order.DeliveryStatusID;
             existingOrder.DeliveryTypeID = order.DeliveryTypeID;
-            existingOrder.DatCrea = order.DatCrea;
-            existingOrder.DatUpt = DateTime.Now;
+         //   existingOrder.DatCrea = order.DatCrea;
+         //   existingOrder.DatUpt = DateTime.Now;
 
             try
             {

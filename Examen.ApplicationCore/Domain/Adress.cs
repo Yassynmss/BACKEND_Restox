@@ -13,12 +13,12 @@ namespace Examen.ApplicationCore.Domain
         public string Line2 { get; set; }
         public string Ville { get; set; }
 
-        // Clé étrangère pour BizAccount
-        public int BizAccountID { get; set; }
 
-        [ForeignKey("BizAccountID")]
-        //[JsonIgnore]
-        public virtual BizAccount? BizAccount { get; set; }
+        public string? ApplicationUserId { get; set; } 
+
+        [ForeignKey("ApplicationUserId")]
+        [JsonIgnore]
+        public virtual ApplicationUser? ApplicationUser { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Customer>? Customers { get; set; }

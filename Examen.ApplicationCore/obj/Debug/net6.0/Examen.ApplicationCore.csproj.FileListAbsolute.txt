@@ -94,3 +94,4 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.ApplicationCore\obj
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.ApplicationCore\obj\Debug\net6.0\refint\Examen.ApplicationCore.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.ApplicationCore\obj\Debug\net6.0\Examen.ApplicationCore.pdb
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.ApplicationCore\obj\Debug\net6.0\ref\Examen.ApplicationCore.dll
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.ApplicationCore\obj\Debug\net6.0\Examen.ApplicationCore.sourcelink.json

@@ -566,3 +566,5 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\n
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.pdb
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.genruntimeconfig.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\ref\Examen.Console.dll
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.sourcelink.json
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\QRCoder.dll

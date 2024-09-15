@@ -11,7 +11,6 @@ namespace Examen.Infrastructure
             : base(options)
         {
         }
-
         public DbSet<BizAccount> BizAccounts { get; set; }
         public DbSet<Adress> Adress { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -28,29 +27,37 @@ namespace Examen.Infrastructure
         public DbSet<ItemPrice> ItemPrices { get; set; }
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<CustomerReview> CustomerReviews { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Relation BizAccount-Adress (One-to-Many avec suppression en cascade)
-            modelBuilder.Entity<BizAccount>()
-                .HasMany(b => b.Adresses)
-                .WithOne(a => a.BizAccount)
-                .HasForeignKey(a => a.BizAccountID)
+            // Configure cascading delete for Address
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Adresses)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // Configure cascading delete for Menu
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Menus)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Configure cascading delete for Order
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Orders)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+            
+
             // Configuration des autres relations avec suppression restrict
-            modelBuilder.Entity<Order>()
-                .HasOne(o => o.Customer)
-                .WithMany(c => c.Orders)
-                .HasForeignKey(o => o.CustomerID)
-                .OnDelete(DeleteBehavior.Restrict);
+          
 
             modelBuilder.Entity<Order>()
-                .HasOne(o => o.BizAccount)
+                .HasOne(o => o.ApplicationUser)
                 .WithMany(b => b.Orders)
-                .HasForeignKey(o => o.BizAccountID)
+                .HasForeignKey(o => o.ApplicationUserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Order>()
@@ -112,6 +119,8 @@ namespace Examen.Infrastructure
                 .WithMany(l => l.ItemDetails)
                 .HasForeignKey(id => id.LanguageID)
                 .OnDelete(DeleteBehavior.Restrict);
+           
+
 
             modelBuilder.Entity<ItemPrice>()
                 .HasOne(ip => ip.Item)
@@ -124,7 +133,11 @@ namespace Examen.Infrastructure
                 .WithMany(c => c.ItemPrices)
                 .HasForeignKey(ip => ip.CurrencyID)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<ApplicationUser>()
+                       .HasOne(u => u.Role)
+                       .WithOne(r => r.User)
+                       .HasForeignKey<ApplicationUser>(u => u.RoleId)
+                       .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<CustomerReview>()
                 .HasOne(cr => cr.Order)
                 .WithOne(o => o.CustomerReview)
@@ -142,7 +155,11 @@ namespace Examen.Infrastructure
                 .WithMany(mp => mp.Combis)
                 .HasForeignKey(c => c.PageID)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<ApplicationUser>()
+          .HasOne(u => u.Role)
+          .WithOne(r => r.User)
+          .HasForeignKey<ApplicationUser>(u => u.RoleId)
+          .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Combi>()
                 .HasMany(c => c.Items)
                 .WithOne(i => i.Combi)
@@ -150,10 +167,11 @@ namespace Examen.Infrastructure
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Menu>()
-        .HasOne(m => m.BizAccount)
+        .HasOne(m => m.ApplicationUser)
         .WithMany(b => b.Menus)
-        .HasForeignKey(m => m.BizAccountID)
+        .HasForeignKey(m => m.ApplicationUserID)
         .OnDelete(DeleteBehavior.Cascade);
+
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

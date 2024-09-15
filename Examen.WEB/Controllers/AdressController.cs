@@ -1,5 +1,6 @@
 ﻿using Examen.ApplicationCore.Domain;
 using Examen.ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 
 namespace Examen.WEB.Controllers
 {
+   // [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [EnableCors("AllowAngularOrigin")]
@@ -20,6 +22,7 @@ namespace Examen.WEB.Controllers
         }
 
         [HttpGet]
+        
         public IActionResult Get()
         {
             try

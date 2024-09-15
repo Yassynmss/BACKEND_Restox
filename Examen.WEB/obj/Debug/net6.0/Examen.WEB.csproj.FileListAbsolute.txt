@@ -1147,7 +1147,6 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.AssemblyInfoInputs.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.AssemblyInfo.cs
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.csproj.CoreCompileInputs.cache
-C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.RazorAssemblyInfo.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.RazorAssemblyInfo.cs
@@ -1167,3 +1166,6 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.pdb
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.genruntimeconfig.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\ref\Examen.WEB.dll
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.sourcelink.json
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\bin\Debug\net6.0\QRCoder.dll
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.WEB\obj\Debug\net6.0\Examen.WEB.MvcApplicationPartsAssemblyInfo.cs

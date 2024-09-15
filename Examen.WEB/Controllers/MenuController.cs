@@ -43,7 +43,7 @@ namespace Examen.WEB.Controllers
                 return BadRequest("Le menu ne peut pas être null.");
             }
 
-            var existingBizAccount = _serviceMenu.GetBizAccountById(menu.BizAccountID);
+            var existingBizAccount = _serviceMenu.GetBizAccountById(menu.ApplicationUserID);
             if (existingBizAccount == null)
             {
                 return BadRequest("BizAccountID invalide. Aucune compte de ce type trouvé.");
@@ -78,7 +78,7 @@ namespace Examen.WEB.Controllers
             // Update only the relevant properties
             existingMenu.Title = menu.Title;
             existingMenu.HtmlDescription = menu.HtmlDescription;
-            existingMenu.BizAccountID = menu.BizAccountID;
+            existingMenu.ApplicationUserID = menu.ApplicationUserID;
 
             try
             {

@@ -14,11 +14,11 @@ namespace Examen.ApplicationCore.Domain
         public string HtmlDescription { get; set; }
 
         // Clé étrangère pointant vers BizAccount
-        public int BizAccountID { get; set; }
+        public string? ApplicationUserID { get; set; }
 
         // Propriété de navigation pour la relation avec BizAccount
         [JsonIgnore]
-        public virtual BizAccount? BizAccount { get; set; }
+        public virtual ApplicationUser? ApplicationUser { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<MenuPage>? MenuPages { get; set; }
