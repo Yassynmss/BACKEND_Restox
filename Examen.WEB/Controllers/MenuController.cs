@@ -2,6 +2,7 @@
 using Examen.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Examen.WEB.Controllers
 {
@@ -20,6 +21,7 @@ namespace Examen.WEB.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+
             var menus = _serviceMenu.GetAll();
             return Ok(menus);
         }
@@ -43,8 +45,8 @@ namespace Examen.WEB.Controllers
                 return BadRequest("Le menu ne peut pas être null.");
             }
 
-            var existingBizAccount = _serviceMenu.GetBizAccountById(menu.ApplicationUserID);
-            if (existingBizAccount == null)
+            var existingApplicationUser = _serviceMenu.GetApplicationUserById(menu.ApplicationUserID);
+            if (existingApplicationUser == null)
             {
                 return BadRequest("BizAccountID invalide. Aucune compte de ce type trouvé.");
             }
@@ -91,6 +93,65 @@ namespace Examen.WEB.Controllers
                 return StatusCode(500, $"Server error: {ex.Message}");
             }
         }
+        [HttpGet("get-all-menus")]
+        public async Task<IActionResult> GetAllMenus()
+        {
+            try
+            {
+                // Fetch all menus with their corresponding user (chef)
+                var menus = await _serviceMenu.GetAllMenusWithUsersAsync();
+
+                if (menus == null || !menus.Any())
+                {
+                    return NotFound();
+                }
+
+                // Map the result to include chef full name (ApplicationUserFullName)
+                var result = menus.Select(menu => new
+                {
+                    menu.MenuID,
+                    menu.Title,
+                    menu.HtmlDescription,
+                    ApplicationUserFullName = menu.ApplicationUser.FullName, // Chef's full name
+                    ApplicationUserID = menu.ApplicationUserID
+                }).ToList();
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Server error: {ex.Message}");
+            }
+        }
+        [HttpGet("get-menu/{menuId}")]
+        public async Task<IActionResult> GetMenuById(int menuId)
+        {
+            try
+            {
+                var menu = await _serviceMenu.GetMenuByIdWithUserAsync(menuId);
+
+                if (menu == null)
+                {
+                    return NotFound();
+                }
+
+                var result = new
+                {
+                    menu.MenuID,
+                    menu.Title,
+                    menu.HtmlDescription,
+                    ApplicationUserFullName = menu.ApplicationUser.FullName, // Return the full name of the user
+                    ApplicationUserID = menu.ApplicationUserID
+                };
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Server error: {ex.Message}");
+            }
+        }
+
 
 
         [HttpDelete("{id}")]

@@ -10,6 +10,9 @@ namespace Examen.ApplicationCore.Interfaces
 {
     public interface IServiceMenu : IService<Menu>
     {
-        BizAccount GetBizAccountById(string bizAccountId);
+        ApplicationUser GetApplicationUserById(string ApplicationUserID);
+        Task<List<Menu>> GetAllMenusWithUsersAsync();
+        Task<Menu> GetMenuByIdWithUserAsync(int menuId);
+
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Examen.Infrastructure.Migrations
 {
-    public partial class lm : Migration
+    public partial class PP : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,26 +21,6 @@ namespace Examen.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BizAccounts",
-                columns: table => new
-                {
-                    BizAccountID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Pseudo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Organization = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DatCrea = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DatUpt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsVerified = table.Column<bool>(type: "bit", nullable: false),
-                    IsLocked = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BizAccounts", x => x.BizAccountID);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,6 +61,22 @@ namespace Examen.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DeliveryTypess", x => x.DeliveryTypeID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmailModels",
+                columns: table => new
+                {
+                    EmailModelID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmailModels", x => x.EmailModelID);
                 });
 
             migrationBuilder.CreateTable(
@@ -143,6 +139,7 @@ namespace Examen.Infrastructure.Migrations
                     DatUpt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsVerified = table.Column<bool>(type: "bit", nullable: false),
                     IsLocked = table.Column<bool>(type: "bit", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RoleId = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -180,8 +177,7 @@ namespace Examen.Infrastructure.Migrations
                     Line2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ville = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ApplicationUserId2 = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    BizAccountID = table.Column<int>(type: "int", nullable: true)
+                    ApplicationUserId2 = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -197,11 +193,6 @@ namespace Examen.Infrastructure.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Adress_BizAccounts_BizAccountID",
-                        column: x => x.BizAccountID,
-                        principalTable: "BizAccounts",
-                        principalColumn: "BizAccountID");
                 });
 
             migrationBuilder.CreateTable(
@@ -297,8 +288,7 @@ namespace Examen.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HtmlDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ApplicationUserID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    BizAccountID = table.Column<int>(type: "int", nullable: true)
+                    ApplicationUserID = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -309,11 +299,6 @@ namespace Examen.Infrastructure.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Menus_BizAccounts_BizAccountID",
-                        column: x => x.BizAccountID,
-                        principalTable: "BizAccounts",
-                        principalColumn: "BizAccountID");
                 });
 
             migrationBuilder.CreateTable(
@@ -365,7 +350,7 @@ namespace Examen.Infrastructure.Migrations
                         column: x => x.MenuID,
                         principalTable: "Menus",
                         principalColumn: "MenuID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -374,16 +359,13 @@ namespace Examen.Infrastructure.Migrations
                 {
                     OrderID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerID = table.Column<int>(type: "int", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentMethodID = table.Column<int>(type: "int", nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PaymentStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DeliveryStatusID = table.Column<int>(type: "int", nullable: false),
                     DeliveryTypeID = table.Column<int>(type: "int", nullable: false),
-                    DatCrea = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DatUpt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BizAccountID = table.Column<int>(type: "int", nullable: true)
+                    CustomerID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -395,16 +377,10 @@ namespace Examen.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Orderss_BizAccounts_BizAccountID",
-                        column: x => x.BizAccountID,
-                        principalTable: "BizAccounts",
-                        principalColumn: "BizAccountID");
-                    table.ForeignKey(
                         name: "FK_Orderss_Customers_CustomerID",
                         column: x => x.CustomerID,
                         principalTable: "Customers",
-                        principalColumn: "CustomerID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "CustomerID");
                     table.ForeignKey(
                         name: "FK_Orderss_DeliveryStatuses_DeliveryStatusID",
                         column: x => x.DeliveryStatusID,
@@ -479,9 +455,11 @@ namespace Examen.Infrastructure.Migrations
                 {
                     ItemID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ItemPriceID = table.Column<int>(type: "int", nullable: false),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ItemOrder = table.Column<int>(type: "int", nullable: false),
                     AnimationUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<int>(type: "int", nullable: false),
                     PageID = table.Column<int>(type: "int", nullable: false),
                     CombiID = table.Column<int>(type: "int", nullable: false),
                     CustomerReviewID = table.Column<int>(type: "int", nullable: true)
@@ -542,11 +520,11 @@ namespace Examen.Infrastructure.Migrations
                 {
                     ItemPriceID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemID = table.Column<int>(type: "int", nullable: false),
                     CurrencyID = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DisplayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    DisplayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ItemID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -561,8 +539,7 @@ namespace Examen.Infrastructure.Migrations
                         name: "FK_ItemPrices_Items_ItemID",
                         column: x => x.ItemID,
                         principalTable: "Items",
-                        principalColumn: "ItemID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ItemID");
                 });
 
             migrationBuilder.CreateTable(
@@ -602,11 +579,6 @@ namespace Examen.Infrastructure.Migrations
                 name: "IX_Adress_ApplicationUserId2",
                 table: "Adress",
                 column: "ApplicationUserId2");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Adress_BizAccountID",
-                table: "Adress",
-                column: "BizAccountID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -721,11 +693,6 @@ namespace Examen.Infrastructure.Migrations
                 column: "ApplicationUserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Menus_BizAccountID",
-                table: "Menus",
-                column: "BizAccountID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_OrderDetails_ItemID",
                 table: "OrderDetails",
                 column: "ItemID");
@@ -739,11 +706,6 @@ namespace Examen.Infrastructure.Migrations
                 name: "IX_Orderss_ApplicationUserId",
                 table: "Orderss",
                 column: "ApplicationUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orderss_BizAccountID",
-                table: "Orderss",
-                column: "BizAccountID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orderss_CustomerID",
@@ -777,6 +739,9 @@ namespace Examen.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "EmailModels");
 
             migrationBuilder.DropTable(
                 name: "ItemDetails");
@@ -828,9 +793,6 @@ namespace Examen.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "BizAccounts");
 
             migrationBuilder.DropTable(
                 name: "Roles");

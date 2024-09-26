@@ -528,6 +528,7 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\n
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\QRCoder.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -560,11 +561,10 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\n
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.AssemblyInfoInputs.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.AssemblyInfo.cs
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.csproj.CoreCompileInputs.cache
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.sourcelink.json
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.C.4E2D99CC.Up2Date
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\refint\Examen.Console.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.pdb
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.genruntimeconfig.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\ref\Examen.Console.dll
-C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\obj\Debug\net6.0\Examen.Console.sourcelink.json
-C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Console\bin\Debug\net6.0\QRCoder.dll

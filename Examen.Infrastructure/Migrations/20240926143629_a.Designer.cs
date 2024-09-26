@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen.Infrastructure.Migrations
 {
     [DbContext(typeof(ExamenContext))]
-    [Migration("20240912145059_lm")]
-    partial class lm
+    [Migration("20240926143629_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,9 +38,6 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<string>("ApplicationUserId2")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Line1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -58,8 +55,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("ApplicationUserId2");
-
-                    b.HasIndex("BizAccountID");
 
                     b.ToTable("Adress");
                 });
@@ -126,6 +121,9 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
@@ -154,47 +152,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasFilter("[RoleId] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("Examen.ApplicationCore.Domain.BizAccount", b =>
-                {
-                    b.Property<int>("BizAccountID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BizAccountID"), 1L, 1);
-
-                    b.Property<DateTime>("DatCrea")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DatUpt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsLocked")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Organization")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pseudo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("BizAccountID");
-
-                    b.ToTable("BizAccounts");
                 });
 
             modelBuilder.Entity("Examen.ApplicationCore.Domain.Combi", b =>
@@ -378,6 +335,35 @@ namespace Examen.Infrastructure.Migrations
                     b.ToTable("DeliveryTypess");
                 });
 
+            modelBuilder.Entity("Examen.ApplicationCore.Domain.EmailModel", b =>
+                {
+                    b.Property<int>("EmailModelID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmailModelID"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmailModelID");
+
+                    b.ToTable("EmailModels");
+                });
+
             modelBuilder.Entity("Examen.ApplicationCore.Domain.Item", b =>
                 {
                     b.Property<int>("ItemID")
@@ -397,6 +383,12 @@ namespace Examen.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ItemOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ItemPriceID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Name")
                         .HasColumnType("int");
 
                     b.Property<int>("PageID")
@@ -465,7 +457,7 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<decimal>("DisplayPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ItemID")
+                    b.Property<int?>("ItemID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -516,9 +508,6 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<string>("ApplicationUserID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
-                        .HasColumnType("int");
-
                     b.Property<string>("HtmlDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -530,8 +519,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasKey("MenuID");
 
                     b.HasIndex("ApplicationUserID");
-
-                    b.HasIndex("BizAccountID");
 
                     b.ToTable("Menus");
                 });
@@ -582,17 +569,8 @@ namespace Examen.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
+                    b.Property<int?>("CustomerID")
                         .HasColumnType("int");
-
-                    b.Property<int>("CustomerID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DatCrea")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DatUpt")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("DeliveryStatusID")
                         .HasColumnType("int");
@@ -603,8 +581,9 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PaymentMethodID")
-                        .HasColumnType("int");
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PaymentStatus")
                         .IsRequired()
@@ -613,8 +592,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasKey("OrderID");
 
                     b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("BizAccountID");
 
                     b.HasIndex("CustomerID");
 
@@ -815,10 +792,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserId2")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
-                        .WithMany("Adresses")
-                        .HasForeignKey("BizAccountID");
-
                     b.Navigation("ApplicationUser");
                 });
 
@@ -927,9 +900,7 @@ namespace Examen.Infrastructure.Migrations
 
                     b.HasOne("Examen.ApplicationCore.Domain.Item", "Item")
                         .WithMany("ItemPrices")
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("ItemID");
 
                     b.Navigation("Currency");
 
@@ -943,10 +914,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
-                        .WithMany("Menus")
-                        .HasForeignKey("BizAccountID");
-
                     b.Navigation("ApplicationUser");
                 });
 
@@ -955,7 +922,7 @@ namespace Examen.Infrastructure.Migrations
                     b.HasOne("Examen.ApplicationCore.Domain.Menu", "Menu")
                         .WithMany("MenuPages")
                         .HasForeignKey("MenuID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Menu");
@@ -969,15 +936,9 @@ namespace Examen.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
+                    b.HasOne("Examen.ApplicationCore.Domain.Customer", null)
                         .WithMany("Orders")
-                        .HasForeignKey("BizAccountID");
-
-                    b.HasOne("Examen.ApplicationCore.Domain.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("CustomerID");
 
                     b.HasOne("Examen.ApplicationCore.Domain.DeliveryStatus", "DeliveryStatus")
                         .WithMany("Orders")
@@ -992,8 +953,6 @@ namespace Examen.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
-
-                    b.Navigation("Customer");
 
                     b.Navigation("DeliveryStatus");
 
@@ -1076,15 +1035,6 @@ namespace Examen.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("Examen.ApplicationCore.Domain.ApplicationUser", b =>
-                {
-                    b.Navigation("Adresses");
-
-                    b.Navigation("Menus");
-
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Examen.ApplicationCore.Domain.BizAccount", b =>
                 {
                     b.Navigation("Adresses");
 

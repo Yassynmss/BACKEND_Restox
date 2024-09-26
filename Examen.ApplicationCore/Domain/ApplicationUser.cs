@@ -14,7 +14,9 @@ namespace Examen.ApplicationCore.Domain
         public bool IsVerified { get; set; }
         public bool IsLocked { get; set; }
 
-        [JsonIgnore]
+        public string? Photo { get; set; } // Nouvelle propriété pour stocker le chemin de la photo
+
+      //  [JsonIgnore]
         public virtual ICollection<Adress>? Adresses { get; set; } = new List<Adress>();
 
         [JsonIgnore]
@@ -23,10 +25,9 @@ namespace Examen.ApplicationCore.Domain
         [JsonIgnore]
         public virtual ICollection<Order>? Orders { get; set; } = new List<Order>();
 
-        // Ajoutez cette propriété pour spécifier la relation un-à-un
         public int? RoleId { get; set; }
-
         [JsonIgnore]
         public virtual Role? Role { get; set; }
     }
+
 }

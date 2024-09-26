@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Examen.WEB.Controllers
 {
-    [Authorize]
+  //  [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class OrderDetailController : ControllerBase
@@ -50,26 +50,33 @@ namespace Examen.WEB.Controllers
             {
                 return BadRequest();
             }
+
             var existingOrder = _serviceOrderDetail.GetById(id);
             if (existingOrder == null)
             {
                 return NotFound();
             }
+
+           
+
             existingOrder.DeliveryStatus = orderDetail.DeliveryStatus;
             existingOrder.Price = orderDetail.Price;
             existingOrder.OrderID = orderDetail.OrderID;
             existingOrder.ItemID = orderDetail.ItemID;
+
             try
             {
-                _serviceOrderDetail.Update(orderDetail);
-            _serviceOrderDetail.Commit();
-            return NoContent();
+                _serviceOrderDetail.Update(existingOrder); // Utilisez l'entité existante ici, pas l'entité `orderDetail`
+                _serviceOrderDetail.Commit();
+                return NoContent();
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Server error: {ex.Message}");
             }
         }
+
+
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

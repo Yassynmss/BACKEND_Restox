@@ -92,5 +92,11 @@ namespace Examen.WEB.Controllers
             _serviceOrder.Commit();
             return NoContent();
         }
+        [HttpGet("count")]
+        public IActionResult GetTotalOrders()
+        {
+            var totalOrders = _serviceOrder.GetTotalOrders();
+            return Ok(totalOrders);
+        }
     }
 }

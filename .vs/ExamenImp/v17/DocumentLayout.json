@@ -3,20 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\adress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\adress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\itemdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\itemdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.infrastructure\\examencontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|solutionrelative:examen.infrastructure\\examencontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.infrastructure\\migrations\\20240926182854_aa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|solutionrelative:examen.infrastructure\\migrations\\20240926182854_aa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.web\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|solutionrelative:examen.web\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.web\\controllers\\itemdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|solutionrelative:examen.web\\controllers\\itemdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\itemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\itemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\deliverytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\deliverytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.infrastructure\\migrations\\20240926143629_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|solutionrelative:examen.infrastructure\\migrations\\20240926143629_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\roletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\roletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|solutionrelative:examen.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.applicationcore\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE00CC61-32E0-4A0B-9F53-0C640734F89C}|Examen.ApplicationCore\\Examen.ApplicationCore.csproj|solutionrelative:examen.applicationcore\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.infrastructure\\migrations\\20240915111657_holaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|solutionrelative:examen.infrastructure\\migrations\\20240915111657_holaa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.web\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E17CB2B7-8C18-473C-9DAA-F7B055FC6F7D}|Examen.WEB\\Examen.WEB.csproj|solutionrelative:examen.web\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|c:\\users\\crown\\documents\\resto app\\back-end\\examenimp\\examen.infrastructure\\migrations\\20240926100528_pp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{337FF8C7-E92A-4917-A9E7-3BED451EE593}|Examen.Infrastructure\\Examen.Infrastructure.csproj|solutionrelative:examen.infrastructure\\migrations\\20240926100528_pp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +79,202 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
-              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\OrderDetail.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\OrderDetail.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\OrderDetail.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T12:03:50.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20240915111657_holaa.cs",
-              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240915111657_holaa.cs",
-              "RelativeDocumentMoniker": "Examen.Infrastructure\\Migrations\\20240915111657_holaa.cs",
-              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240915111657_holaa.cs",
-              "RelativeToolTip": "Examen.Infrastructure\\Migrations\\20240915111657_holaa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T11:16:58.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Examen.WEB\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Examen.WEB\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAowD0AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T11:16:41.629Z",
+              "WhenOpened": "2024-09-26T18:38:32.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Order.cs",
-              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\Order.cs",
-              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Order.cs",
-              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\Order.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAoAAAAgAAAAAAAAAA==",
+              "Title": "Adress.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Adress.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\Adress.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Adress.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\Adress.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T11:13:03.716Z",
+              "WhenOpened": "2024-09-26T18:38:28.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20240926182854_aa.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926182854_aa.cs",
+              "RelativeDocumentMoniker": "Examen.Infrastructure\\Migrations\\20240926182854_aa.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926182854_aa.cs",
+              "RelativeToolTip": "Examen.Infrastructure\\Migrations\\20240926182854_aa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T18:28:55.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ItemDetailController.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\ItemDetailController.cs",
+              "RelativeDocumentMoniker": "Examen.WEB\\Controllers\\ItemDetailController.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\ItemDetailController.cs",
+              "RelativeToolTip": "Examen.WEB\\Controllers\\ItemDetailController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAwD0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T18:23:59.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ItemType.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ItemType.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\ItemType.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ItemType.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\ItemType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:50:32.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeliveryType.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\DeliveryType.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\DeliveryType.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\DeliveryType.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\DeliveryType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:50:26.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\ItemController.cs",
+              "RelativeDocumentMoniker": "Examen.WEB\\Controllers\\ItemController.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\ItemController.cs",
+              "RelativeToolTip": "Examen.WEB\\Controllers\\ItemController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwEUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:45:21.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20240926143629_a.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926143629_a.cs",
+              "RelativeDocumentMoniker": "Examen.Infrastructure\\Migrations\\20240926143629_a.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926143629_a.cs",
+              "RelativeToolTip": "Examen.Infrastructure\\Migrations\\20240926143629_a.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:36:30.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Item.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\Item.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Item.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\Item.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:33:14.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemDetail.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ItemDetail.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\ItemDetail.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ItemDetail.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\ItemDetail.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:25:36.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RoleType.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\RoleType.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\RoleType.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\RoleType.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\RoleType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:07:35.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Role.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\Role.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\Role.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:07:33.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
+              "RelativeToolTip": "Examen.ApplicationCore\\Domain\\ApplicationUser.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA9wBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:55:40.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Examen.WEB\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.WEB\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Examen.WEB\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAqwJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T13:40:20.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240926100528_PP.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926100528_PP.cs",
+              "RelativeDocumentMoniker": "Examen.Infrastructure\\Migrations\\20240926100528_PP.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\Migrations\\20240926100528_PP.cs",
+              "RelativeToolTip": "Examen.Infrastructure\\Migrations\\20240926100528_PP.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T10:05:29.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExamenContext.cs",
+              "DocumentMoniker": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\ExamenContext.cs",
+              "RelativeDocumentMoniker": "Examen.Infrastructure\\ExamenContext.cs",
+              "ToolTip": "C:\\Users\\CROWN\\Documents\\Resto App\\Back-end\\ExamenImp\\Examen.Infrastructure\\ExamenContext.cs",
+              "RelativeToolTip": "Examen.Infrastructure\\ExamenContext.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAqwLQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T10:01:25.38Z",
               "EditorCaption": ""
             }
           ]

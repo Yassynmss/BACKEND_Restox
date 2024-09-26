@@ -12,7 +12,7 @@ namespace Examen.ApplicationCore.Domain
     {
         [Key]
         public int ItemDetailID { get; set; }
-        public int ItemID { get; set; }
+        public int itemID { get; set; }
         public int LanguageID { get; set; }
         public string Description { get; set; }
         public string HtmlDescription { get; set; }
@@ -22,5 +22,6 @@ namespace Examen.ApplicationCore.Domain
         [JsonIgnore]
 
         public virtual Language? Language { get; set; }
+
     }
 }

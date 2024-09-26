@@ -8,7 +8,7 @@ namespace Examen.ApplicationCore.Domain
     public class BizAccount
     {
         [Key]
-        public int BizAccountID { get; set; }
+        public int BAccountID { get; set; }
 
         public string Pseudo { get; set; }
         public string Organization { get; set; }

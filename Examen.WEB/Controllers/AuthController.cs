@@ -24,6 +24,8 @@ namespace Examen.WEB.Controllers
             _signInManager = signInManager;
             _roleManager = roleManager; // Initialisé
             _configuration = configuration;
+        
+
         }
 
         [HttpPost("login")]
@@ -68,7 +70,7 @@ namespace Examen.WEB.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterModel model)
+        public async Task<IActionResult> Register([FromForm] RegisterModel model)
         {
             var user = new ApplicationUser
             {
@@ -83,15 +85,31 @@ namespace Examen.WEB.Controllers
                 IsLocked = model.IsLocked
             };
 
+            // Gestion de l'upload de la photo
+            if (model.Photo != null)
+            {
+                var uploadsFolder = Path.Combine("wwwroot", "uploads");
+                Directory.CreateDirectory(uploadsFolder); // Crée le dossier s'il n'existe pas
+
+                var fileName = $"{Guid.NewGuid()}_{model.Photo.FileName}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Photo.CopyToAsync(fileStream);
+                }
+
+                user.Photo = $"/uploads/{fileName}"; 
+            }
+
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
                 if (Enum.TryParse<RoleType>(model.Role, true, out var roleType) && Enum.IsDefined(typeof(RoleType), roleType))
                 {
-                    var roleName = roleType.ToString(); // Convertir l'enum en nom de rôle
+                    var roleName = roleType.ToString();
 
-                    // Crée le rôle si nécessaire
                     if (!await _roleManager.RoleExistsAsync(roleName))
                     {
                         var roleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
@@ -101,7 +119,6 @@ namespace Examen.WEB.Controllers
                         }
                     }
 
-                    // Ajoute le rôle spécifié à l'utilisateur
                     await _userManager.AddToRoleAsync(user, roleName);
                 }
                 else
@@ -133,15 +150,19 @@ namespace Examen.WEB.Controllers
             public DateTime DatUpt { get; set; }
             public bool IsVerified { get; set; }
             public bool IsLocked { get; set; }
-
-            // Nouveau champ pour le rôle
             public string Role { get; set; }
+
+            // Ajout du champ pour la photo
+            public IFormFile? Photo { get; set; }
+            public virtual ICollection<Adress>? Adresses { get; set; } = new List<Adress>();
+
         }
+
 
         [HttpGet("customers")]
         public async Task<IActionResult> GetCustomers()
         {
-            var roleName = RoleType.CUSTOMER.ToString(); // Nom du rôle à chercher
+            var roleName = RoleType.CUSTOMER.ToString();
 
             var usersInCustomerRole = await _userManager.GetUsersInRoleAsync(roleName);
 
@@ -157,10 +178,57 @@ namespace Examen.WEB.Controllers
                 user.FullName,
                 user.Email,
                 user.PhoneNumber,
-                user.Organization
+                user.Organization,
+                user.Photo // Inclure la photo dans la réponse
             }).ToList();
 
             return Ok(customerList);
         }
+
+        [HttpGet("restochefs")]
+        public async Task<IActionResult> GetRestoChef()
+        {
+            var roleName = RoleType.RESTOCHEF.ToString();
+
+            var usersInChefRole = await _userManager.GetUsersInRoleAsync(roleName);
+
+            if (usersInChefRole == null || !usersInChefRole.Any())
+            {
+                return NotFound("No chefs found.");
+            }
+
+            var chefList = usersInChefRole.Select(user => new
+            {
+                user.Id,
+                user.UserName,
+                user.FullName,
+                user.Email,
+                user.PhoneNumber,
+                user.Organization,
+                user.Photo
+            }).ToList();
+
+            return Ok(chefList);
+        }
+        [HttpGet("count")]
+        public async Task<IActionResult> GetNumberOfUsersByType([FromQuery] string type)
+        {
+            if (Enum.TryParse<RoleType>(type, true, out var roleType) && Enum.IsDefined(typeof(RoleType), roleType))
+            {
+                var usersInRole = await _userManager.GetUsersInRoleAsync(roleType.ToString());
+                if (usersInRole == null)
+                {
+                    return NotFound($"No users found for the role: {type}");
+                }
+
+                return Ok(usersInRole.Count);
+            }
+
+            return BadRequest("Invalid user type specified.");
+        }
+
+
     }
+
+
 }

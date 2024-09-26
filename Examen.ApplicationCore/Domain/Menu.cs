@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Examen.ApplicationCore.Domain
@@ -13,10 +14,8 @@ namespace Examen.ApplicationCore.Domain
         public string Title { get; set; }
         public string HtmlDescription { get; set; }
 
-        // Clé étrangère pointant vers BizAccount
         public string? ApplicationUserID { get; set; }
 
-        // Propriété de navigation pour la relation avec BizAccount
         [JsonIgnore]
         public virtual ApplicationUser? ApplicationUser { get; set; }
 

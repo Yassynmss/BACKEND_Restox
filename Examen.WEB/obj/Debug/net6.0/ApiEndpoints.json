@@ -80,6 +80,22 @@
   },
   {
     "ContainingType": "Examen.WEB.Controllers.AuthController",
+    "Method": "GetNumberOfUsersByType",
+    "RelativePath": "api/Auth/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Examen.WEB.Controllers.AuthController",
     "Method": "GetCustomers",
     "RelativePath": "api/Auth/customers",
     "HttpMethod": "GET",
@@ -113,90 +129,81 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "Examen.WEB.Controllers.AuthController\u002BRegisterModel",
-        "IsRequired": true
+        "Name": "Pseudo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Organization",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DatCrea",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DatUpt",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsVerified",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsLocked",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Role",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Adresses",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Examen.ApplicationCore.Domain.Adress, Examen.ApplicationCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Examen.WEB.Controllers.BizAccountController",
-    "Method": "Get",
-    "RelativePath": "api/BizAccount",
+    "ContainingType": "Examen.WEB.Controllers.AuthController",
+    "Method": "GetRestoChef",
+    "RelativePath": "api/Auth/restochefs",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Examen.WEB.Controllers.BizAccountController",
-    "Method": "Create",
-    "RelativePath": "api/BizAccount",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "bizAccount",
-        "Type": "Examen.ApplicationCore.Domain.BizAccount",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Examen.WEB.Controllers.BizAccountController",
-    "Method": "GetById",
-    "RelativePath": "api/BizAccount/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Examen.WEB.Controllers.BizAccountController",
-    "Method": "Edit",
-    "RelativePath": "api/BizAccount/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "bizAccount",
-        "Type": "Examen.ApplicationCore.Domain.BizAccount",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Examen.WEB.Controllers.BizAccountController",
-    "Method": "Delete",
-    "RelativePath": "api/BizAccount/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {
@@ -674,6 +681,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Examen.WEB.Controllers.EmailModelController",
+    "Method": "SendEmail",
+    "RelativePath": "api/EmailModel/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "Examen.ApplicationCore.Domain.EmailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Examen.WEB.Controllers.ItemController",
     "Method": "Get",
     "RelativePath": "api/Item",
@@ -692,9 +715,39 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "item",
-        "Type": "Examen.ApplicationCore.Domain.Item",
-        "IsRequired": true
+        "Name": "ItemPriceID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ItemOrder",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "Examen.ApplicationCore.Domain.ItemType",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CombiID",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1053,6 +1106,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Examen.WEB.Controllers.MenuController",
+    "Method": "GetAllMenus",
+    "RelativePath": "api/Menu/get-all-menus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Examen.WEB.Controllers.MenuController",
+    "Method": "GetMenuById",
+    "RelativePath": "api/Menu/get-menu/{menuId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "menuId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Examen.WEB.Controllers.MenuPageController",
     "Method": "Get",
     "RelativePath": "api/MenuPage",
@@ -1208,6 +1287,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Examen.WEB.Controllers.OrderController",
+    "Method": "GetTotalOrders",
+    "RelativePath": "api/Order/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

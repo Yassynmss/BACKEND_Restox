@@ -11,7 +11,8 @@ namespace Examen.Infrastructure
             : base(options)
         {
         }
-        public DbSet<BizAccount> BizAccounts { get; set; }
+        //public DbSet<BizAccount> BizAccounts { get; set; }
+        public DbSet<EmailModel> EmailModels { get; set; }
         public DbSet<Adress> Adress { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orderss { get; set; }
@@ -49,10 +50,10 @@ namespace Examen.Infrastructure
                 .HasMany(u => u.Orders)
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
-            
+
 
             // Configuration des autres relations avec suppression restrict
-          
+
 
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.ApplicationUser)
@@ -79,10 +80,11 @@ namespace Examen.Infrastructure
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<MenuPage>()
-                .HasOne(m => m.Menu)
-                .WithMany(m => m.MenuPages)
-                .HasForeignKey(m => m.MenuID)
-                .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(m => m.Menu)
+            .WithMany(mp => mp.MenuPages)
+            .HasForeignKey(mp => mp.MenuID)
+            .OnDelete(DeleteBehavior.Cascade);
+
 
             modelBuilder.Entity<Item>()
                 .HasOne(i => i.MenuPage)
@@ -94,7 +96,8 @@ namespace Examen.Infrastructure
                 .HasOne(i => i.Combi)
                 .WithMany(c => c.Items)
                 .HasForeignKey(i => i.CombiID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict); 
+           
 
             modelBuilder.Entity<OrderDetail>()
                 .HasOne(od => od.Order)
@@ -111,7 +114,7 @@ namespace Examen.Infrastructure
             modelBuilder.Entity<ItemDetail>()
                 .HasOne(id => id.Item)
                 .WithMany(i => i.ItemDetails)
-                .HasForeignKey(id => id.ItemID)
+                .HasForeignKey(id => id.itemID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ItemDetail>()
@@ -119,14 +122,10 @@ namespace Examen.Infrastructure
                 .WithMany(l => l.ItemDetails)
                 .HasForeignKey(id => id.LanguageID)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
+
            
-
-
-            modelBuilder.Entity<ItemPrice>()
-                .HasOne(ip => ip.Item)
-                .WithMany(i => i.ItemPrices)
-                .HasForeignKey(ip => ip.ItemID)
-                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ItemPrice>()
                 .HasOne(ip => ip.Currency)
@@ -134,10 +133,13 @@ namespace Examen.Infrastructure
                 .HasForeignKey(ip => ip.CurrencyID)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<ApplicationUser>()
-                       .HasOne(u => u.Role)
-                       .WithOne(r => r.User)
-                       .HasForeignKey<ApplicationUser>(u => u.RoleId)
-                       .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(u => u.Role)
+                .WithOne(r => r.User)
+                .HasForeignKey<ApplicationUser>(u => u.RoleId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
             modelBuilder.Entity<CustomerReview>()
                 .HasOne(cr => cr.Order)
                 .WithOne(o => o.CustomerReview)
@@ -155,11 +157,8 @@ namespace Examen.Infrastructure
                 .WithMany(mp => mp.Combis)
                 .HasForeignKey(c => c.PageID)
                 .OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<ApplicationUser>()
-          .HasOne(u => u.Role)
-          .WithOne(r => r.User)
-          .HasForeignKey<ApplicationUser>(u => u.RoleId)
-          .OnDelete(DeleteBehavior.Restrict);
+          
+
             modelBuilder.Entity<Combi>()
                 .HasMany(c => c.Items)
                 .WithOne(i => i.Combi)

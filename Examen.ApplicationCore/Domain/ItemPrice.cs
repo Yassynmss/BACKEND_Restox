@@ -12,7 +12,6 @@ namespace Examen.ApplicationCore.Domain
     {
         [Key]
         public int ItemPriceID { get; set; }
-        public int ItemID { get; set; }
         public int CurrencyID { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }

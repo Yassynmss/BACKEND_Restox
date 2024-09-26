@@ -1,5 +1,7 @@
 ﻿using AM.ApplicationCore.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,12 +11,16 @@ namespace AM.Infrastructure
     {
         private readonly DbContext _context;
         private readonly DbSet<TEntity> _dbSet;
-      //  private readonly IUnitOfWork _unitOfWork;
 
         public GenericRepository(DbContext context)
         {
             _context = context;
             _dbSet = _context.Set<TEntity>();
+        }
+
+        public IQueryable<TEntity> Query()
+        {
+            return _dbSet.AsQueryable();
         }
 
         public void Add(TEntity entity)
@@ -47,26 +53,16 @@ namespace AM.Infrastructure
             return _dbSet.Find(keyValues);
         }
 
-        public IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> condition )
+        public IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> condition)
         {
             if (condition != null)
                 return _dbSet.Where(condition).AsEnumerable();
             return _dbSet.AsEnumerable();
-
-            //IQueryable<TEntity> mydbset = _dbSet;
-            //if (where != null)
-            //    mydbset = mydbset.Where(where);
-            //return mydbset.AsEnumerable();
         }
 
         public void Update(TEntity entity)
         {
             _dbSet.Update(entity);
         }
-
-        //public void SubmitChanges()
-        //{
-        //    _unitOfWork.Save();
-        //}
     }
 }

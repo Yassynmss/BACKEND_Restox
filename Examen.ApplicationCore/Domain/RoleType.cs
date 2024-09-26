@@ -10,6 +10,7 @@ namespace Examen.ApplicationCore.Domain
     {
         CUSTOMER,
         RESTOWNER,
+        RESTOCHEF,
         USER
     }
 

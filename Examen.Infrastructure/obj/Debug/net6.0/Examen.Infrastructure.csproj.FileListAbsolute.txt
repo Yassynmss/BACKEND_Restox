@@ -128,10 +128,10 @@ C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.AssemblyInfo.cs
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.sourcelink.json
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.I.82EBB984.Up2Date
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\refint\Examen.Infrastructure.dll
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.pdb
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.genruntimeconfig.cache
 C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\ref\Examen.Infrastructure.dll
-C:\Users\CROWN\Documents\Resto App\Back-end\ExamenImp\Examen.Infrastructure\obj\Debug\net6.0\Examen.Infrastructure.sourcelink.json

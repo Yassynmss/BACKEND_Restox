@@ -10,7 +10,10 @@ namespace AM.Infrastructure
         private readonly ExamenContext _context;
         private readonly Type repositoryType;
         private bool disposedValue;
-
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
         public UnitOfWork(ExamenContext context, Type type)
         {
             _context = context;

@@ -36,9 +36,6 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<string>("ApplicationUserId2")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Line1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -56,8 +53,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("ApplicationUserId2");
-
-                    b.HasIndex("BizAccountID");
 
                     b.ToTable("Adress");
                 });
@@ -124,6 +119,9 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
@@ -152,47 +150,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasFilter("[RoleId] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("Examen.ApplicationCore.Domain.BizAccount", b =>
-                {
-                    b.Property<int>("BizAccountID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BizAccountID"), 1L, 1);
-
-                    b.Property<DateTime>("DatCrea")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DatUpt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsLocked")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Organization")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pseudo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("BizAccountID");
-
-                    b.ToTable("BizAccounts");
                 });
 
             modelBuilder.Entity("Examen.ApplicationCore.Domain.Combi", b =>
@@ -376,13 +333,42 @@ namespace Examen.Infrastructure.Migrations
                     b.ToTable("DeliveryTypess");
                 });
 
-            modelBuilder.Entity("Examen.ApplicationCore.Domain.Item", b =>
+            modelBuilder.Entity("Examen.ApplicationCore.Domain.EmailModel", b =>
                 {
-                    b.Property<int>("ItemID")
+                    b.Property<int>("EmailModelID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmailModelID"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmailModelID");
+
+                    b.ToTable("EmailModels");
+                });
+
+            modelBuilder.Entity("Examen.ApplicationCore.Domain.Item", b =>
+                {
+                    b.Property<int>("itemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("itemID"), 1L, 1);
 
                     b.Property<string>("AnimationUrl")
                         .IsRequired()
@@ -397,6 +383,12 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<int>("ItemOrder")
                         .HasColumnType("int");
 
+                    b.Property<int>("ItemPriceID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Name")
+                        .HasColumnType("int");
+
                     b.Property<int>("PageID")
                         .HasColumnType("int");
 
@@ -404,7 +396,7 @@ namespace Examen.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ItemID");
+                    b.HasKey("itemID");
 
                     b.HasIndex("CombiID");
 
@@ -431,17 +423,17 @@ namespace Examen.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ItemID")
+                    b.Property<int>("LanguageID")
                         .HasColumnType("int");
 
-                    b.Property<int>("LanguageID")
+                    b.Property<int>("itemID")
                         .HasColumnType("int");
 
                     b.HasKey("ItemDetailID");
 
-                    b.HasIndex("ItemID");
-
                     b.HasIndex("LanguageID");
+
+                    b.HasIndex("itemID");
 
                     b.ToTable("ItemDetails");
                 });
@@ -463,17 +455,17 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<decimal>("DisplayPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ItemID")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("itemID")
+                        .HasColumnType("int");
 
                     b.HasKey("ItemPriceID");
 
                     b.HasIndex("CurrencyID");
 
-                    b.HasIndex("ItemID");
+                    b.HasIndex("itemID");
 
                     b.ToTable("ItemPrices");
                 });
@@ -514,9 +506,6 @@ namespace Examen.Infrastructure.Migrations
                     b.Property<string>("ApplicationUserID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
-                        .HasColumnType("int");
-
                     b.Property<string>("HtmlDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -528,8 +517,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasKey("MenuID");
 
                     b.HasIndex("ApplicationUserID");
-
-                    b.HasIndex("BizAccountID");
 
                     b.ToTable("Menus");
                 });
@@ -580,9 +567,6 @@ namespace Examen.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("BizAccountID")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CustomerID")
                         .HasColumnType("int");
 
@@ -606,8 +590,6 @@ namespace Examen.Infrastructure.Migrations
                     b.HasKey("OrderID");
 
                     b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("BizAccountID");
 
                     b.HasIndex("CustomerID");
 
@@ -808,10 +790,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserId2")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
-                        .WithMany("Adresses")
-                        .HasForeignKey("BizAccountID");
-
                     b.Navigation("ApplicationUser");
                 });
 
@@ -893,15 +871,15 @@ namespace Examen.Infrastructure.Migrations
 
             modelBuilder.Entity("Examen.ApplicationCore.Domain.ItemDetail", b =>
                 {
-                    b.HasOne("Examen.ApplicationCore.Domain.Item", "Item")
-                        .WithMany("ItemDetails")
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Examen.ApplicationCore.Domain.Language", "Language")
                         .WithMany("ItemDetails")
                         .HasForeignKey("LanguageID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Examen.ApplicationCore.Domain.Item", "Item")
+                        .WithMany("ItemDetails")
+                        .HasForeignKey("itemID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -920,9 +898,7 @@ namespace Examen.Infrastructure.Migrations
 
                     b.HasOne("Examen.ApplicationCore.Domain.Item", "Item")
                         .WithMany("ItemPrices")
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("itemID");
 
                     b.Navigation("Currency");
 
@@ -936,10 +912,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
-                        .WithMany("Menus")
-                        .HasForeignKey("BizAccountID");
-
                     b.Navigation("ApplicationUser");
                 });
 
@@ -948,7 +920,7 @@ namespace Examen.Infrastructure.Migrations
                     b.HasOne("Examen.ApplicationCore.Domain.Menu", "Menu")
                         .WithMany("MenuPages")
                         .HasForeignKey("MenuID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Menu");
@@ -961,10 +933,6 @@ namespace Examen.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Examen.ApplicationCore.Domain.BizAccount", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("BizAccountID");
 
                     b.HasOne("Examen.ApplicationCore.Domain.Customer", null)
                         .WithMany("Orders")
@@ -1065,15 +1033,6 @@ namespace Examen.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("Examen.ApplicationCore.Domain.ApplicationUser", b =>
-                {
-                    b.Navigation("Adresses");
-
-                    b.Navigation("Menus");
-
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Examen.ApplicationCore.Domain.BizAccount", b =>
                 {
                     b.Navigation("Adresses");
 

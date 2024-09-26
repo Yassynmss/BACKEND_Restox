@@ -10,5 +10,6 @@ namespace Examen.ApplicationCore.Interfaces
 {
     public interface IServiceItem : IService<Item>
     {
+        Task CommitAsync(); 
     }
 }

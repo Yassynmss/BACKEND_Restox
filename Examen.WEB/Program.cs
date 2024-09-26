@@ -36,6 +36,9 @@ builder.Services.AddScoped<IServiceCustomer, ServiceCustomer>();
 builder.Services.AddScoped<IServiceCustomerReview, ServiceCustomerReview>();
 builder.Services.AddScoped<IServiceDeliveryStatus, ServiceDeliveryStatus>();
 builder.Services.AddScoped<IServiceDeliveryType, ServiceDeliveryType>();
+builder.Services.AddScoped<IServiceEmailModel>(provider =>
+    new ServiceEmailModel(provider.GetService<IUnitOfWork>(), provider.GetService<ExamenContext>()));
+
 
 // Add Identity services
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()

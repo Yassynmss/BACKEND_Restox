@@ -59,7 +59,7 @@ namespace Examen.WEB.Controllers
             // Update only relevant properties
             existingItemDetail.Description = itemDetail.Description;
             existingItemDetail.HtmlDescription = itemDetail.HtmlDescription;
-            existingItemDetail.ItemID = itemDetail.ItemID;
+            existingItemDetail.itemID = itemDetail.itemID;
             existingItemDetail.LanguageID = itemDetail.LanguageID;
 
             try

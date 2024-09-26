@@ -11,6 +11,7 @@ namespace AM.ApplicationCore.Interfaces
         TEntity GetById(params object[] keyValues);
         TEntity Get(Expression<Func<TEntity, bool>> where);
         IEnumerable<TEntity> GetAll(); // GetMany()
+        IQueryable<TEntity> Query();
         IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where = null);
     }    
 }
