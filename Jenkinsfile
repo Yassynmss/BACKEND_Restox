@@ -1,46 +1,39 @@
 pipeline {
     agent any
 
+      environment {
+        SONARQUBE_SERVER = 'http://192.168.1.156:9000'  // Update with your SonarQube server URL
+        SONARQUBE_TOKEN = credentials('sonartesttoken')  // Use the credentials ID you set for SonarQube token
+        SONAR_PROJECT_KEY = 'pipeTest' // Replace with your actual project key
+    }
     stages {
-        stage('Checkout') {
+        stage('Checkout Code from GitHub') {
             steps {
-                // Récupère le code source depuis Git
                 git branch: 'First', url: 'https://github.com/Yassynmss/BACKEND_Restox.git'
             }
         }
 
-        stage('Build') {
+        stage('Maven Clean') {
             steps {
-                // Compile et construit le projet avec Maven
-                sh 'mvn clean install'
+                sh 'mvn clean'
             }
         }
 
-        stage('Test') {
+        stage('Maven Compile') {
             steps {
-                // Exécute les tests unitaires
-                sh 'mvn test'
+                sh 'mvn compile'
             }
         }
 
-        stage('Deploy') {
+        stage('SonarQube Analysis') {
             steps {
-                // Déploiement ou autre tâche de livraison (à configurer selon ton besoin)
-                echo 'Déploiement de l\'application...'
+                 
+                    // Run Sonar analysis using the token
+                sh "mvn sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONARQUBE_SERVER} -Dsonar.login=${SONARQUBE_TOKEN}"
+                
             }
         }
     }
 
-    post {
-        always {
-            // Nettoie l'environnement à la fin du pipeline
-            cleanWs()
-        }
-        success {
-            echo 'Build réussi !'
-        }
-        failure {
-            echo 'Build échoué.'
-        }
-    }
+   
 }
